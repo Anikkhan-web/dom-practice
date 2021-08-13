@@ -1,35 +1,55 @@
-// document.getElementsByTagName(h2)
+function makered(){
 
-const blog = document.getElementsByTagName('p');
-
-for (let h1 of blog){
-    console.log(h1);
-    // h1.style.color="tomato"
-    // h1.style.backgroundColor="salmon";
-    h1.style.color="blue";
-    
-    h1.style.border="2px solid black";
-    h1.style.borderRadius="10px";
-    // h1.style.border="100px";
+ document.body.style.backgroundColor='red';
 
 }
 
-const li = document.createElement('li');
-li.innerText='blog5';
-const ul= document.getElementById('blog-list');
-ul.appendChild(li)
-const article = document.createElement('article');
-const h3 = document.createElement('h3');
-h3.innerText= " my awesome blog";
-const p = document.createElement('p');
-p.innerText = '212necessitatibus ut corrupti ipsam, doloremque repellendus accusantium quas libero a odit quaerat cum hic fugiat ad fugit praesentium nisi! Officiis nam totam delectus saepe repudiandae impedit maiores f212';
-article.appendChild(h3);
-article.appendChild(p);
+const blueButton = document.getElementById('make-blue-button');
+blueButton.onclick= makeBlue;
+
+function makeBlue(){
+    document.body.style.backgroundColor="blue"
+}
+
+const grayButton = document.getElementById('make-gray-button');
+grayButton.onclick= function(){
+    document.body.style.backgroundColor="gray"
+}
+
+const goldenButton = document.getElementById('make-golden-button');
+goldenButton.addEventListener('click',makeGoldenrod);
+
+
+function makeGoldenrod(){
+    document.body.style.backgroundColor='goldenrod';
+
+}
+
+const hotPinkButton = document.getElementById('make-hotpink-button');
+hotPinkButton.addEventListener('click',function(){
+    document.body.style.backgroundColor='hotpink'
+})
+
+
+function lastButton(){
+  const clicking =   document.getElementById('click-me');
+  clicking.innerText= ' i am last button';
+}
+
+
+document.getElementById('handle').addEventListener('click',function(){
+    const p = document.getElementById('click-me');
+    p.innerText='Lorem ipsum dolor sit amet consectetur adipisicing';
+
+
+})
+
+document.getElementById('update-name').addEventListener('click',function(){
+    const nameField = document.getElementById('name-field');
+    const p = document.getElementById('click-me');
+    p.innerText=nameField.value;
+    nameField.value = '';
 
 
 
-// const blogDetails = document.getElementById("para");
-// blogDetails.style.backgroundColor="salmon";
-// blogDetails.style.color="white";
-// blogDetails.style.padding="100px";
-// blogDetails.style.marginBottom="100px";
+})
